@@ -1,0 +1,22 @@
+.centerBox {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+        height: 100vh;
+}
+
+.mainDiv {
+    background-color: beige;
+    min-width:800px;
+    min-height: 800px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.mat-button{
+    background-color: aquamarine;
+}
+  

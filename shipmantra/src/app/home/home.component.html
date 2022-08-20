@@ -1,0 +1,23 @@
+<div class="centerBox">
+
+<form  #costForm= "ngForm" (ngSubmit)="onSubmit()" required>
+<div class = "mainDiv">
+    <h1>Calculate Minimum Order Price</h1>
+    <mat-form-field appearance="fill" class="inputFields" >
+    <mat-label style="font-weight: bold;font-size: large;">From</mat-label>
+    <input  matInput ngx-google-places-autocomplete [(ngModel)]="from_address" (onAddressChange)= "AutoFillFromAddress($event)" required name="from_address">
+
+</mat-form-field>
+<mat-form-field appearance="fill" class="inputFields">
+    <mat-label style="font-weight: bold;font-size: large;">To</mat-label>
+    <input matInput ngx-google-places-autocomplete  [(ngModel)]="to_address" (onAddressChange)= "AutoFillToAddress($event)" required name="to_address">
+
+</mat-form-field>
+<span style="font-size: large;color: red;" *ngIf="from_address =='' || to_address ==''">Enter From and To Address to get an estimate</span>
+<button [disabled]="from_address=='' || to_address ==''" mat-button style="font-size: 16px" color="primary" type="submit">Calculate</button>
+
+<p>Note: This Calculates the price only based on the From and To Distance.</p>
+</div>
+</form>
+
+</div>
