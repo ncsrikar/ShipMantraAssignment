@@ -13,6 +13,7 @@ import {MatButtonModule} from '@angular/material/button';
 import { ShowCostComponent } from './show-cost/show-cost.component';
 import { GetCostDataService } from './get-cost-data.service';
 import { RedirectGaurdService } from './redirect-gaurd.service';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { RedirectGaurdService } from './redirect-gaurd.service';
     GooglePlaceModule,
     MatButtonModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    MatProgressSpinnerModule
   ],
   providers: [GetCostDataService, RedirectGaurdService],
   bootstrap: [AppComponent]

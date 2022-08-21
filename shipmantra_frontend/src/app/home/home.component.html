@@ -1,7 +1,7 @@
 <div class="centerBox">
 
-<form  #costForm= "ngForm" (ngSubmit)="onSubmit()" required>
-<div class = "mainDiv">
+<form  #costForm= "ngForm" (ngSubmit)="onSubmit()" required >
+<div class = "mainDiv" *ngIf="!start_spinner">
     <h1>Calculate Minimum Order Price</h1>
     <mat-form-field appearance="fill" class="inputFields" >
     <mat-label style="font-weight: bold;font-size: large;">From</mat-label>
@@ -17,6 +17,11 @@
 <button [disabled]="from_address=='' || to_address ==''" mat-button style="font-size: 16px" color="primary" type="submit">Calculate</button>
 
 <p>Note: This Calculates the price only based on the From and To Distance.</p>
+</div>
+<div *ngIf="start_spinner">
+    <div class = "mainDiv">
+    <mat-spinner></mat-spinner>
+</div>
 </div>
 </form>
 
