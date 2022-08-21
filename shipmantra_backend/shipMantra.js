@@ -28,6 +28,11 @@ app.post('/', JsonParser,(req, res) => {
     res.send({"order_amount":body.order.payment_amount, "from_address":req.body.from_address,"to_address":req.body.to_address})
   })  
 })
+
+app.get('/test_api', (req, res)=>{
+  res.set('Content-Type', 'text/html');
+  res.send(Buffer.from('<h2>Test String</h2>'));
+})
 app.listen(port, () => {
   console.log(`ShipMantra example app listening on port ${port}`)
 })
